@@ -1,4 +1,7 @@
-package classwork_18.computer_shop.model;
+package classwork_19.copmare_computers;
+
+import java.util.Objects;
+
 //- cpu
 //- ram
 //- ssd
@@ -11,7 +14,6 @@ public class Computer {
     private int ssd;
     private String brand;
     private double price;
-
 
     public Computer(String cpu, int ram, int ssd, String brand, double price) {
         this.cpu = cpu;
@@ -72,4 +74,15 @@ public class Computer {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; // sravnimaem objekt sam c coboj, bozvrasciaem true
+        if (!(o instanceof Computer computer)) return false; // eto objekt ne klassa Computer vozvrasciaem false
+        return ram == computer.ram && ssd == computer.ssd && Double.compare(price, computer.price) == 0 && Objects.equals(cpu, computer.cpu) && Objects.equals(brand, computer.brand); // Double class obiortki s bolsoj bukvy, objekty sravnivajutsia cerez equals
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cpu, ram, ssd, brand, price);
+    }
 }
