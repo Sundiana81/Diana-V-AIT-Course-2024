@@ -1,4 +1,4 @@
-package classwork.book_library.model;
+package classwork_24.book_library.model;
 
 // Создать класс Book с полями:
 // long isbn, String title, String author, int yearOfPublishing.

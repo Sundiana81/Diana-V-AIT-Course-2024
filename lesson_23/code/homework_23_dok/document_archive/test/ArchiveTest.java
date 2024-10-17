@@ -1,7 +1,7 @@
 package homework_23_dok.document_archive.test;
 
 
-import homework_23_dok.document_archive.controle.Archive;
+import homework_23_dok.document_archive.controller.Archive;
 import homework_23_dok.document_archive.model.Document;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

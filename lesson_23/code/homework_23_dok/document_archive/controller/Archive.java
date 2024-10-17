@@ -1,4 +1,4 @@
-package homework_23_dok.document_archive.controle;
+package homework_23_dok.document_archive.controller;
 
 //Реализуйте класс Document и приложение Archive по аналогии с Book и Library.
 // Уникальный номер документа содержит 10 цифр.
