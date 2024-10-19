@@ -1,4 +1,4 @@
-package classwork_26.ait.employee.model;
+package classwork_27.ait.employee.model;
 
 public class SalesManager extends Employee{
 
@@ -28,8 +28,9 @@ public class SalesManager extends Employee{
     }
 
     @Override
-    public double calcSalary() {
-        double salary = salesValue * percent;
-        return ensureSalary(salary);
+    public double calcSalary() {  // realizacija metoda abstraktnogo kasa
+        double salary = salesValue * percent; // umnazaem na
+        return ensureSalary(salary); // verniotsia perenaznacenaja zarplata
+
     }
 }

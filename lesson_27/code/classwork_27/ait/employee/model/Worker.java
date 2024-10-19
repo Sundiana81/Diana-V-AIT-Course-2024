@@ -1,6 +1,6 @@
-package classwork_26.ait.employee.model;
+package classwork_27.ait.employee.model;
 
-public class Worker extends Employee {
+public class Worker extends Employee{
 
     private int grade;
 
@@ -16,6 +16,7 @@ public class Worker extends Employee {
     public void setGrade(int grade) {
         this.grade = grade;
     }
+
 
     @Override
     public double calcSalary() {
