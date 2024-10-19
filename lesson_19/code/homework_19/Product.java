@@ -1,4 +1,4 @@
-package homework_19.product.model;
+package homework_19;
 
 //Создать класс Product, с полями:
 //

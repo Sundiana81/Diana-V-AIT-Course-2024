@@ -1,4 +1,4 @@
-package homework_19.product.model;
+package homework_19;
 
 public class MarketAppl {
 
