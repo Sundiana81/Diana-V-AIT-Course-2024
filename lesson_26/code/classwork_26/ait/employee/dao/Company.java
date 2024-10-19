@@ -1,36 +1,36 @@
 package classwork_26.ait.employee.dao;
-// добавление сотрудника +
-//- нахождение сотрудника по id +
-//- обновление cотрудника +
-//- удаление сотрудника +
-//- печать списка сотрудников +
-//- кол-во сотрудников +
-//- объем ФОТ
-//- объем продаж
+
 import classwork_26.ait.employee.model.Employee;
-//  interfase produmali i napisali metody
-public interface Company {  // KLASSS SODERZIT ABSTRAKTNYJ KLASS
 
-    boolean addEmployee(Employee employee);  // on dobavlen, kak porvat , kak nazvat, dat argument
+//    - добавление сотрудника +
+//    - нахождение сотрудника по id +
+//    - обновление cотрудника +
+//    - удаление сотрудника +
+//    - печать списка сотрудников +
+//    - кол-во сотрудников +
+//    - объем ФОТ
+//    - объем продаж
 
-    Employee removeEmployee(int id); // udalenie
+public interface Company {
 
-    Employee findEmployee(int id); // iscem emploeey
+    boolean addEmployee(Employee employee);
 
-    Employee uodateEmploeey(Employee employee); // novyj emploeey , dobovliaem, dobovliaem zarplatu
-   // metod quantiti verniot kolicestvo
-    int quantity(); // skolko sotrudnikov rabotaet, kolicestrvo
+    Employee removeEmployee(int id);
 
-    void printEmployee(); // raspeciatat sotrudnikov
+    Employee findEmployee(int id);
+
+    Employee updateEmployee(Employee employee);
+
+    int quantity();
+
+    void printEmployee();
 
     double totalSalary();
 
     double totalSales();
 
-    Employee[] findEmloyeeHoursGreateThan(int hours); //
+    Employee[] findEmployeeHoursGreaterThan(int hours);
 
-    Employee[] findEmployeeSalaryRange(double min, double max); //
-
-
+    Employee[] findEmployeeSalaryRange(double min, double max);
 
 }

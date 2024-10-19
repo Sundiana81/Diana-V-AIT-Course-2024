@@ -1,24 +1,29 @@
-package classwork_26.ait.employee.model;
+package classwork_27.ait.employee.model;
 
-import javax.swing.*;
+// создать дочерние классы Manager, SalesManager и Worker, реализовать в них методы начисления зарплаты:
+//- Manager: base + grade*hours
+//- SalesManager: salesValue * percent
+//- Worker: grade*hours
+
 import java.util.Objects;
 
 public abstract class Employee {
 
-    protected static double minWage = 12.48;
+    protected static double minWage = 12.48; // minWage peremennaja
     protected final int id;
     protected String name;
     protected String secondName;
     protected double hours;
 
-    public static double getMinWage() {
+    public static double getMinWage(){
         return minWage;
     }
 
-    public static void setMinWage(double minWage) {
-        if (minWage > Employee.minWage) {
+    public static void setMinWage(double minWage){
+        if(minWage > Employee.minWage){  // esli min bolse cem tekusciaja my propuskaem
             Employee.minWage = minWage;
-        }
+    }
+
     }
 
     public Employee(int id, String name, String secondName, double hours) {
@@ -79,16 +84,17 @@ public abstract class Employee {
         return sb.toString();
     }
 
-    // methods for salary
+    // methods for alary
     public abstract double calcSalary();
 
     protected double ensureSalary(double salary){
-        if(salary < hours * minWage){
+        if(salary < hours * minWage){ // esli zarplata menshe vyrabatanyh ciasov vsio ravno vyplacivaem min
             System.out.println("Set min salary");
-            salary = hours * minWage;
+           salary = hours * minWage; // po zakonadatelstvu vyplacivaem nimimalnuju
         }
         return salary;
     }
+
 
 
 } // end of class

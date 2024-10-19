@@ -2,14 +2,14 @@ package classwork_26.ait.employee.dao;
 
 import classwork_26.ait.employee.model.Employee;
 
-public class CompanyImpl implements Company {  // implements otnositsia k interfeisu i nasleduem..
+public class CompanyImpl implements Company {
 
-    private Employee[] employees; // sotrudniki
+    private Employee[] employees;
     private int size;
-  // capacity maximalnoe kolicestvo liudej
-    public CompanyImpl(int capacity) { // int capacuty zaveli sami
-        // v objekt vlozil masiv
-        this.employees = new Employee[capacity]; // vozmoznoe kol sotrudnikov
+
+    // capacity - возможное кол-во сотрудников
+    public CompanyImpl(int capacity) {
+        this.employees = new Employee[capacity];
         this.size = size;
     }
 
@@ -29,7 +29,7 @@ public class CompanyImpl implements Company {  // implements otnositsia k interf
     }
 
     @Override
-    public Employee uodateEmploeey(Employee employee) {
+    public Employee updateEmployee(Employee employee) {
         return null;
     }
 
@@ -54,7 +54,7 @@ public class CompanyImpl implements Company {  // implements otnositsia k interf
     }
 
     @Override
-    public Employee[] findEmloyeeHoursGreateThan(int hours) {
+    public Employee[] findEmployeeHoursGreaterThan(int hours) {
         return new Employee[0];
     }
 
