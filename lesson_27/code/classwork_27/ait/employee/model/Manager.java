@@ -1,6 +1,6 @@
-package classwork_26.ait.employee.model;
+package classwork_27.ait.employee.model;
 
-public class Manager extends Employee {
+public class Manager  extends Employee {
 
     private double baseSalary;
     private int grade;
@@ -8,7 +8,7 @@ public class Manager extends Employee {
     public Manager(int id, String name, String secondName, double hours, double baseSalary, int grade) {
         super(id, name, secondName, hours);
         this.baseSalary = baseSalary;
-        this.grade = grade;
+        this.grade = grade; // UROVEN KAAFICENT; STOIMOST CIASOVOGO KLASSA
     }
 
     public double getBaseSalary() {
@@ -28,8 +28,9 @@ public class Manager extends Employee {
     }
 
     @Override
-    public double calcSalary() {
+    public double calcSalary() {  // method iz Employee prisol cerez lampocku on abstraktny
         double salary = baseSalary + hours*grade;
+
         return ensureSalary(salary); // check min value of salary
     }
 }
