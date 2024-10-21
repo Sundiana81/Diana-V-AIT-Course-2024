@@ -1,15 +1,15 @@
 package homework_17_01.book_objekt.model;
 
 //Создайте класс Book с полями:
-//
 //    уникальный номер ISBN
 //    название title
 //    автор author
 //    год издания yearOfPublishing
 //    жанр genre
-//
-//В классе Book реализуйте конструктор, геттеры и сеттеры на все поля и метод display, который выводит информацию о книге.
-// Создайте конструктор, в котором нет поля ISBN. Создайте конструктор, в котором есть только поля title, author и genre.
+//В классе Book реализуйте конструктор, геттеры и сеттеры на все поля и метод display,
+// который выводит информацию о книге.
+// Создайте конструктор, в котором нет поля ISBN.
+// Создайте конструктор, в котором есть только поля title, author и genre.
 
 public class Book {
 
@@ -53,7 +53,6 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
-
     public int getYearOfPublishing() {
         return yearOfPublishing;
     }

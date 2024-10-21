@@ -1,6 +1,7 @@
 package classwork_27.ait.employee.dao;
 
 import classwork_27.ait.employee.model.Employee;
+import classwork_27.ait.employee.model.SalesManager;
 
 public class CompanyImpl implements Company {  // implements otnositsia k interfeisu i nasleduem..
 
@@ -17,13 +18,13 @@ public class CompanyImpl implements Company {  // implements otnositsia k interf
     @Override
     public boolean addEmployee(Employee employee) {
         // bad cases
-        if(employee == null){
+        if (employee == null) {
             return false;
         }
-        if(size == employees.length){
+        if (size == employees.length) {
             return false;
         }
-        if(findEmployee(employee.getId()) != null) {
+        if (findEmployee(employee.getId()) != null) {
             return false;
         }
         // good case
@@ -35,7 +36,7 @@ public class CompanyImpl implements Company {  // implements otnositsia k interf
     @Override
     public Employee removeEmployee(int id) {
         for (int i = 0; i < size; i++) {
-            if(employees[i].getId() == id){
+            if (employees[i].getId() == id) {
                 Employee victim = employees[i];
                 employees[i] = employees[size - 1]; // на место жертвы ставим (копируем) последний элемент массива
                 employees[size - 1] = null; // последний элемент затрем с помощью null
@@ -49,7 +50,7 @@ public class CompanyImpl implements Company {  // implements otnositsia k interf
     @Override
     public Employee findEmployee(int id) {
         for (int i = 0; i < size; i++) {
-            if(employees[i].getId() == id){
+            if (employees[i].getId() == id) {
                 return employees[i];
             }
         }
@@ -76,22 +77,83 @@ public class CompanyImpl implements Company {  // implements otnositsia k interf
 
     @Override
     public double totalSalary() {
-        return 0;
+        double totalSalary = 0;
+        for (int i = 0; i < size; i++) {
+
+            totalSalary += employees[i].calcSalary();
+
+        }
+
+        return totalSalary;
+
     }
+
 
     @Override
     public double totalSales() {
-        return 0;
+        double totalSales = 0;
+        for (int i = 0; i < size; i++) {
+            if (employees[i] instanceof SalesManager) { // proveriaem peredkastingom // instanceuf eto da net
+                SalesManager sm = (SalesManager) employees[i]; // esli javliaetsia to mi ego delaem
+                totalSales += sm.getSalesValue();
+
+            }
+
+        }
+
+        return totalSales;
     }
 
+
     @Override
-    public Employee[] findEmloyeeHoursGreateThan(int hours) {
-        return new Employee[0];
+    public Employee[] findEmployeeHoursGreaterThan(int hours) {
+        int count = 0;
+        // Считаем количество сотрудников, удовлетворяющих условию
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getHours() > hours) {
+                count++;
+            }
+        }
+        // Создаем массив для сотрудников, удовлетворяющих условию
+        Employee[] result = new Employee[count];
+        int index = 0;
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getHours() > hours) {
+                result[index++] = employees[i];
+            }
+        }
+        return result;
     }
 
 
     @Override
     public Employee[] findEmployeeSalaryRange(double min, double max) {
-        return new Employee[0];
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            double salary = employees[i].calcSalary();
+            if (salary >= min && salary <= max) {
+                count++;
+            }
+        }
+
+        Employee[] result = new Employee[count];
+        int index = 0;
+        for (int i = 0; i < size; i++) {
+            double salary = employees[i].calcSalary();
+            if (salary >= min && salary <= max) {
+                result[index++] = employees[i];
+            }
+        }
+        return result;
     }
-}
+
+    @Override
+    public double averageSalary() {
+        if (size == 0) {
+            return 0;
+        }
+        return totalSalary() / size;
+    }
+
+
+} // end of main

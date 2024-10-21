@@ -55,11 +55,15 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee[] findEmployeeHoursGreaterThan(int hours) {
+
+
         return new Employee[0];
     }
 
     @Override
     public Employee[] findEmployeeSalaryRange(double min, double max) {
+
+
         return new Employee[0];
     }
 }

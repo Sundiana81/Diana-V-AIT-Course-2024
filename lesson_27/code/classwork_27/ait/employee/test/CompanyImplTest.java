@@ -9,6 +9,7 @@ import classwork_27.ait.employee.model.Worker;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CompanyImplTest {
@@ -87,21 +88,32 @@ class CompanyImplTest {
     }
 
     @Test
-    void totalSalaryTest() {
-
+    void totalSalesTest() {
+    assertEquals(130000, company.totalSales());
     }
 
     @Test
-    void totalSalesTest() {
+    void totalSalaryTest() {
+        double totalSalary = 29200;
+        assertEquals(totalSalary, company.totalSalary());
     }
 
     @Test
     void findEmployeeHoursGreaterThanTest() {
-
+        Employee[] result = company.findEmployeeHoursGreaterThan(150);
+        assertEquals(4, result.length); // All employees have 160 hours
     }
 
     @Test
     void findEmployeeSalaryRangeTest() {
+        Employee[] result = company.findEmployeeSalaryRange(1000, 20000);
+        assertEquals(4, result.length); // Assuming workers have salaries in this range
+    }
 
+    @Test
+    void averageSalaryTest() {
+        double averageSalary = 29200 / 4.0;
+        assertEquals(averageSalary, company.averageSalary(), 0.01);
     }
 }
+

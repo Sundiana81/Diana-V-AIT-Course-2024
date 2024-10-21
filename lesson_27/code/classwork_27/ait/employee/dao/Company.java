@@ -27,10 +27,10 @@ public interface Company {  // KLASSS SODERZIT ABSTRAKTNYJ KLASS
 
     double totalSales();
 
-    Employee[] findEmloyeeHoursGreateThan(int hours); //
+    Employee[] findEmployeeHoursGreaterThan(int hours);
 
     Employee[] findEmployeeSalaryRange(double min, double max); //
 
 
-
+    double averageSalary();
 }
