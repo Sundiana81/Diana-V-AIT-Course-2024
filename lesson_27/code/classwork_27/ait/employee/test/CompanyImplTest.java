@@ -115,5 +115,6 @@ class CompanyImplTest {
         double averageSalary = 29200 / 4.0;
         assertEquals(averageSalary, company.averageSalary(), 0.01);
     }
+
 }
 

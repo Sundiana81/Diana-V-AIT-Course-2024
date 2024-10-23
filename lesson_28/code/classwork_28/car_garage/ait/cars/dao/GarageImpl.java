@@ -26,7 +26,18 @@ public class GarageImpl implements Garage{
 
     @Override
     public Car removeCar(String regNumber) {
-        return null;
+        for (int i = 0; i < size; i++) {
+            if (cars[i].getRegNumber().equals(regNumber)) {
+                Car removedCar = cars[i];
+                // Shift remaining cars to the left to fill the gap
+                for (int j = i; j < size - 1; j++) {
+                    cars[j] = cars[j + 1];
+                }
+                cars[--size] = null; // Decrease size and set last element to null
+                return removedCar;
+            }
+        }
+        return null; // If the car is not found
     }
 
     @Override
@@ -51,12 +62,14 @@ public class GarageImpl implements Garage{
 
     @Override
     public Car[] findCarsByEngine(double min, double max) {
-        return new Car[0];
+        // priletit v 77 strocku
+        return findCarsByPredicate(car-> car.getEngine() > min && car.getEngine() < max);
     }
 
     @Override
     public Car[] findCarsByColor(String color) {
-        return new Car[0];
+
+        return findCarsByPredicate(car -> car.getColor().equals(color));
     }
 
     @Override
@@ -74,7 +87,7 @@ public class GarageImpl implements Garage{
     private Car[] findCarsByPredicate(Predicate<Car> predicate){
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if(predicate.test(cars[i])){ // объект проходит тест
+            if(predicate.test(cars[i])){ // объект проходит тест // iz 74 stroki beriot
                 count++;
             }
         }

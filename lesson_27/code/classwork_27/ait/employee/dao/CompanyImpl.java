@@ -110,12 +110,12 @@ public class CompanyImpl implements Company {  // implements otnositsia k interf
         int count = 0;
         // Считаем количество сотрудников, удовлетворяющих условию
         for (int i = 0; i < size; i++) {
-            if (employees[i].getHours() > hours) {
+            if (employees[i].getHours() > hours) { // criteria
                 count++;
             }
         }
         // Создаем массив для сотрудников, удовлетворяющих условию
-        Employee[] result = new Employee[count];
+        Employee[] result = new Employee[count]; // new array for results
         int index = 0;
         for (int i = 0; i < size; i++) {
             if (employees[i].getHours() > hours) {
@@ -131,7 +131,7 @@ public class CompanyImpl implements Company {  // implements otnositsia k interf
         int count = 0;
         for (int i = 0; i < size; i++) {
             double salary = employees[i].calcSalary();
-            if (salary >= min && salary <= max) {
+            if (salary >= min && salary <= max) { // bolse cem nim i mense cem max
                 count++;
             }
         }
