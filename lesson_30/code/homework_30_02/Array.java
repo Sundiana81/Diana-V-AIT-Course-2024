@@ -4,6 +4,8 @@ package homework_30_02;
 //    ascending;
 //    descending.
 
+import classwork_31.cities.City;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
@@ -41,6 +43,10 @@ import java.util.Random;
                 System.out.printf("%.2f ", num);
             }
             System.out.println();
+        }
+
+        public static void sort(City[] cities) {
+
         }
     }
 

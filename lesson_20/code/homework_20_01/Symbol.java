@@ -2,7 +2,7 @@ package homework_20_01;
 
 import java.util.Scanner;
 
-public class Simbol {
+public class Symbol {
 
     public static void main(String[] args) {
 
