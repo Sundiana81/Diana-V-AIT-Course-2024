@@ -121,4 +121,29 @@ class CityTest {
 
     }
    // smenit komparator esli iskat po gorogam
+
+    //Проверьте работу метода System.arraycopy, скопировав часть массива.
+    //Проверьте работу метода Arrays.copyOfRange
+
+  @Test
+    void testSystemArrayCopy(){
+        // нам нужно расширить массив на 2 ЕЛИМЕНТА
+      City[] citiesCopyPlius2 = new City[cities.length + 2];
+      // копируем старый массив в новый
+      // 0 скакого элимента, 3 с какий позиции, до 4 строки
+      System.arraycopy(cities, 2, citiesCopyPlius2, 3, 3);
+      printArray(cities, "Original array");
+      printArray(citiesCopyPlius2, "Coppy of array");
+
+  }
+  // проверить работу метода Array.copyOfRange
+  @Test
+    void testArraysCopyOfRange(){
+        City[] citiesCopy = Arrays.copyOfRange(cities, 1, 3);
+        printArray(cities, "Original (sourse) array");
+        printArray(citiesCopy,"Copy of range");
+
+
+
+  }
 }
