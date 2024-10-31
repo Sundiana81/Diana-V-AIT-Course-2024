@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AlbumImplTest {
 
-    Album album;
+    AlbumImpl album;
     Photo[] photos;
 
     LocalDateTime now = LocalDateTime.now();
@@ -43,6 +43,7 @@ class AlbumImplTest {
         for (int i = 0; i < 6; i++) {
             album.addPhoto(photos[i]);
         }
+        printArray(photos);
     }
 
     @Test
@@ -77,16 +78,16 @@ class AlbumImplTest {
     }
 
     @Test
-    void getAllPhotoFrom() {
+    void getAllPhotoFromAlbum() {
         Photo[] expected = {photos[3], photos[4]};
-        Photo[] actual = album.getAllPhotoFrom(2);
+        Photo[] actual = album.getAllPhotoFromAlbum(2);
         assertArrayEquals(expected, actual);
     }
 
     @Test
     void getPhotoBetweenDate() {
         LocalDate today = LocalDate.now();
-        Photo[] actual = album.getPhotoBetweenDate(today.minusDays(2), today.minusDays(6));
+        Photo[] actual = album.getPhotoBetweenDate(today.minusDays(6), today.minusDays(2));
         Arrays.sort(actual, comparator);
         Photo[] expected = {photos[5], photos[4], photos[2]};
         Arrays.sort(expected, comparator);
@@ -97,5 +98,12 @@ class AlbumImplTest {
     void size() {
         assertEquals(6, album.size());
     }
-}
 
+    private void printArray(Photo[] photos){
+        // print photos
+        for (Photo p : photos) {
+            System.out.println(p);
+        }
+    }
+
+}
