@@ -134,10 +134,29 @@ public class NodeListImpl<E> implements NodeList<E> {
     }
 
     @Override
-    public int lastIndexOf(Object o) {
-        // TODO - самостоятельно
-        return 0;
-    }
+
+
+        public int lastIndexOf(Object o) {
+            int index = size - 1; //  начальный индекс устанавливается на последний элемент.
+            Node<E> current = last; // начнем обход с последнего узла.
+        //Пока текущий узел current не равен null, проверяем,
+        // совпадает ли current.data с объектом o.
+        // Для сравнения используется o.equals(current.data),
+        // если o не равен null, или current.data == null, если o тоже null.
+            while (current != null) {
+                if ((o == null && current.data == null) || (o != null && o.equals(current.data))) {
+                    return index;
+                }
+                current = current.prev;
+                index--;
+            }
+
+            return -1; // Если элемент не найден
+        }
+
+
+
+
 
     @Override
     public E remove(int index) {
@@ -145,24 +164,32 @@ public class NodeListImpl<E> implements NodeList<E> {
         return unlink(node);
     }
 
-    // разобраться самостоятельно, что делает метод
+    //Метод unlink(Node<E> node) предназначен для удаления заданного узла из связного списка
+    // и возвращения значения, хранимого в этом узле.
     private E unlink(Node<E> node) {
-        E victim = node.data;
-        Node<E> prev = node.prev;
-        Node<E> next = node.next;
-        if (prev != null) {
+        E victim = node.data;//сохраняет данные удаляемого узла, чтобы вернуть их после удаления.
+        Node<E> prev = node.prev;//сохраняет ссылку на предыдущий узел.
+        Node<E> next = node.next;//сохраняет ссылку на следующий узел.
+        if (prev != null) {//if (prev != null) { prev.next = next; node.prev = null; } — если предыдущий узел существует,
+            // то его next обновляется на next текущего узла, тем самым пропуская текущий узел.
             prev.next = next;
-            node.prev = null;
-        } else {
+            node.prev = null;// Затем node.prev обнуляется, чтобы разорвать связь с предыдущим узлом.
+        } else {//если предыдущий узел отсутствует, значит node был первым элементом,
+            // поэтому обновляется указатель first на next.
             first = next;
         }
+        //if (next != null) { next.prev = prev; node.next = null; } — если следующий узел существует,
+        // то его prev обновляется на prev текущего узла, исключая текущий узел из цепочки.
+        // Затем node.next обнуляется, разрывая связь с следующим узлом.
+        //else { last = prev; } — если следующий узел отсутствует, значит node был последним элементом,
+        // и указатель last обновляется на prev.
         if (next != null) {
             next.prev = prev;
             node.next = null;
         } else {
             last = prev;
         }
-        node.data = null;
+        node.data = null;//обнуляет данные узла, чтобы освободить память.
         size--;
         return victim;
     }
