@@ -1,4 +1,4 @@
-package supermarkt.model;
+package supermarket.model;
 
 import java.time.LocalDate;
 import java.util.Objects;

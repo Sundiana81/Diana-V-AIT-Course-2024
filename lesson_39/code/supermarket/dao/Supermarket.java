@@ -1,6 +1,6 @@
-package supermarkt.dao;
+package supermarket.dao;
 
-import supermarkt.model.Product;
+import supermarket.model.Product;
 
 public interface Supermarket {
 
