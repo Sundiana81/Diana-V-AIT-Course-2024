@@ -1,6 +1,6 @@
-package Classwork;
+package homework_01;
 
-public class Classwork_05 {
+public class CurrencyConvertor  {
     public static void main(String[] args) {
         // перевод доллара в евро
 

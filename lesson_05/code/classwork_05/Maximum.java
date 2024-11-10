@@ -1,6 +1,6 @@
-package Classwork;
+package classwork_05;
 
-public class Maximu {
+public class Maximum {
     public static void main(String[] args) {
         // vizov methoda
         int a = 45;

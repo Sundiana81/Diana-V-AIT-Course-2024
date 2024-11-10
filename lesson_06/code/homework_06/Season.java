@@ -1,13 +1,13 @@
-package classwork_06;
+package homework_06;
 //Пользователь с клавиатуры вводит число от 1 до 12, программа сообщает, какому времени года принадлежит введенный месяц.
 
 import java.util.Scanner;
 
-public class Homework_02 {
+public class Season {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Input number of Seaseon");
+        System.out.println("Input number of Season");
         int monthNumber = scanner.nextInt();
 
         switch (monthNumber) {

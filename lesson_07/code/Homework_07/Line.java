@@ -1,4 +1,4 @@
-package Homework;
+package Homework_07;
 import java.util.Scanner;
 
 // Задача 1. Программа получает на вход строку и число повторений этой строки.

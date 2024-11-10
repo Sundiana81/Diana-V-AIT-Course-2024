@@ -1,10 +1,9 @@
-package Classwork;
+package homework_01;
 
-public class Homework {
+public class Currency {
     public static void main(String[] args) {
 
 
-        // menu
 
         // евро в британские фунты
 
@@ -15,7 +14,7 @@ public class Homework {
 
     }// end of main
 
-// метолд для конвертации
+// метод для конвертации
 
     private static double exchangeEuroToPfund(double money) {
 
