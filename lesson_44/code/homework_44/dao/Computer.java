@@ -1,11 +1,7 @@
-package homework_45.dao;
+package homework_44.dao;
 
 
-
-    import java.util.*;
-import java.util.stream.Collectors;
-
-    public class Computer {
+public class Computer {
         private String brand;
         private int ram;
         private int ssd;

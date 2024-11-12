@@ -1,4 +1,4 @@
-package homework_45.dao;
+package homework_44.dao;
 
 class Tourist {
     private final String name;
