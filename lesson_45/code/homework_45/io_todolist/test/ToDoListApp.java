@@ -1,6 +1,8 @@
-package homework_45.io_todolist;
+package homework_45.io_todolist.test;
 
-    public class ToDoListApp {
+import homework_45.io_todolist.model.ToDoList;
+
+public class ToDoListApp {
         public static void main(String[] args) {
             ToDoList todoList = new ToDoList();
             todoList.addTask("Buy groceries");

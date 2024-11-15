@@ -1,4 +1,4 @@
-package homework_45.io_todolist;
+package homework_45.io_todolist.dao;
 
 
     import java.io.Serializable;

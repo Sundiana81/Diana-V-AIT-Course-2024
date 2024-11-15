@@ -1,5 +1,7 @@
-package homework_45.io_todolist;
+package homework_45.io_todolist.model;
 
+
+import homework_45.io_todolist.dao.Task;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -27,5 +29,6 @@ import java.util.List;
             }
         }
     }
+
 
 
