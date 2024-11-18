@@ -21,12 +21,22 @@ public class ToDoListAppl implements Serializable{
         LocalDate now = LocalDate.now();
         Scanner scanner = new Scanner(System.in);
 
-        // начало цикла
+            // начало цикла
         while (true) {
-            // print menu
             Menu.printMenu(); // статический метод вызывается по имени класса
             // ask choice
-            System.out.println("Input your choice: ");
+            System.out.print("Введите ваш выбор: ");
+            // Проверка на корректный ввод числа
+            while (!scanner.hasNextInt()) {
+                System.out.println("Ошибка: введите целое число для выбора.");
+                scanner.next(); // пропустить некорректный ввод
+                continue;
+            }
+//            // print menu
+//            Menu.printMenu(); // статический метод вызывается по имени класса
+//            // ask choice
+//            System.out.println("Input your choice: ");
+//
             int choice = scanner.nextInt();
             // execute
             switch (choice) {
